@@ -1,32 +1,38 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
-function App() {
+
+const App = () => {
+  const user = true;
+
   return (
     <Router>
       <Switch>
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/productList/:category">
+        <Route path="/products/:category">
           <ProductList />
         </Route>
-        <Route path="/product/:id">
+        <Route path="/products/:id">
           <Product />
         </Route>
         <Route path="/cart">
           <Cart />
         </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
+        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
         <Route path="/register">
-          <Register />
+          {user ? <Redirect to="/" /> : <Register />}
         </Route>
         <Route exact path="/">
           <Home />
@@ -34,6 +40,6 @@ function App() {
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;

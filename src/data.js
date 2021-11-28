@@ -27,16 +27,19 @@ export const categories = [
     id: 1,
     img: "https://cdn.pixabay.com/photo/2017/02/28/08/29/girl-2105150_960_720.jpg",
     title: "SUMMER SALE",
+    cat: "women"
   },
   {
     id: 2,
     img: "https://cdn.pixabay.com/photo/2017/02/28/08/37/girl-2105180_960_720.jpg",
     title: "LOUNGEWEAR LOVE",
+    cat: "coat"
   },
   {
     id: 3,
     img: "https://cdn.pixabay.com/photo/2017/02/28/08/29/girl-2105149_960_720.jpg",
     title: "LIGHT JACKETS",
+    cat: "jeans"
   },
 ];
 
