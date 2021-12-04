@@ -1,45 +1,42 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://cdn.pixabay.com/photo/2019/08/01/04/31/girl-4376600_960_720.jpg",
+    img: "https://res.cloudinary.com/medsy/image/upload/v1638614494/girl-4376611_960_720-removebg-preview_ullirk.png",
     title: "SUMMER SALE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "f5fafd",
   },
   {
     id: 2,
-    img: "https://cdn.pixabay.com/photo/2019/08/01/04/32/girl-4376611_960_720.jpg",
+    img: "https://i.ibb.co/DG69bQ4/2.png",
     title: "AUTUMN COLLECTION",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fcf1ed",
   },
   {
     id: 3,
-    img: "https://cdn.pixabay.com/photo/2019/08/01/04/31/girl-4376602_960_720.jpg",
+    img: "https://i.ibb.co/cXFnLLV/3.png",
     title: "LOUNGEWEAR LOVE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: "f5faf4",
+    bg: "fbf0f4",
   },
 ];
 
 export const categories = [
   {
     id: 1,
-    img: "https://cdn.pixabay.com/photo/2017/02/28/08/29/girl-2105150_960_720.jpg",
-    title: "SUMMER SALE",
-    cat: "women"
+    img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    title: "SHIRT STYLE!",
   },
   {
     id: 2,
-    img: "https://cdn.pixabay.com/photo/2017/02/28/08/37/girl-2105180_960_720.jpg",
+    img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     title: "LOUNGEWEAR LOVE",
-    cat: "coat"
   },
   {
     id: 3,
-    img: "https://cdn.pixabay.com/photo/2017/02/28/08/29/girl-2105149_960_720.jpg",
+    img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     title: "LIGHT JACKETS",
-    cat: "jeans"
   },
 ];
 
@@ -70,7 +67,7 @@ export const popularProducts = [
   },
   {
     id: 7,
-    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+    img: "https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
   },
   {
     id: 8,
