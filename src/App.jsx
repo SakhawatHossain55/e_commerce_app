@@ -1,7 +1,12 @@
+import Home from "./pages/Home";
 import "./App.css";
 
 const App = () => {
-  return <div>Hello World</div>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 };
 
 export default App;
