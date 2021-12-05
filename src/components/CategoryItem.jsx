@@ -39,6 +39,7 @@ const Button = styled.button`
     color:gray;
     cursor: pointer;
     font-weight: 600;
+    border-radius: 5px;
 `;
 
 const CategoryItem = ({ item }) => {
