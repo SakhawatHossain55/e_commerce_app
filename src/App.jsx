@@ -1,10 +1,10 @@
-import Home from "./pages/Home";
 import "./App.css";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (
     <>
-      <Home />
+      <Cart />
     </>
   );
 };
