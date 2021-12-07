@@ -1,11 +1,36 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import Cart from "./pages/Cart";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Product from "./pages/Product";
+import ProductList from "./pages/ProductList";
+import Register from "./pages/Register";
 
 const App = () => {
   return (
-    <>
-      <Home />
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/products/:category">
+          <ProductList />
+        </Route>
+        <Route exact path="/product/:id">
+          <Product />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/register">
+          <Register />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
