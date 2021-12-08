@@ -1,12 +1,13 @@
 import { Add, Remove } from "@material-ui/icons";
 import { useEffect, useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
+import { addProduct } from "../redux/cartRedux";
 import { publicRequest } from "../requestMethods";
 import { mobile } from "../responsive";
 
@@ -125,8 +126,8 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
-  // const dispatch = useDispatch();
-
+  const dispatch = useDispatch();
+console.log(product);
   useEffect(() => {
     const getProduct = async () => {
       try {
@@ -137,17 +138,17 @@ const Product = () => {
     getProduct();
   }, [id]);
 
-  // const handleQuantity = (type) => {
-  //   if (type === "dec") {
-  //     quantity > 1 && setQuantity(quantity - 1);
-  //   } else {
-  //     setQuantity(quantity + 1);
-  //   }
-  // };
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
 
-  // const handleClick = () => {
-  //   dispatch(addProduct({ ...product, quantity, color, size }));
-  // };
+  const handleClick = () => {
+    dispatch(addProduct({ ...product, quantity, color, size }));
+  };
 
   return (
     <Container>
@@ -155,41 +156,36 @@ const Product = () => {
       <Announcement />
       <Wrapper>
         <ImgContainer>
-        <Image src={product.img} />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-          <Title>Denim Jumpsuit</Title>
-          <Desc>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. A iusto at
-            nostrum quia quibusdam error cum itaque, modi, sapiente similique,
-            recusandae neque sequi. Recusandae, officiis pariatur at distinctio
-            doloremque dicta?
-          </Desc>
-          <Price>$20</Price>
+          <Title>{product.title}</Title>
+          <Desc>{product.de}</Desc>
+          <Price>${product.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
+              {/* {product.color.map((c) => (
+                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+              ))} */}
+              {color}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize>
-                <FilterSizeOption>XS</FilterSizeOption>
-                <FilterSizeOption>S</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>L</FilterSizeOption>
-                <FilterSizeOption>XL</FilterSizeOption>
+                {/* {product.size?.map((s) => (
+                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                ))} */}
+                {size}
               </FilterSize>
             </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
-              <Button>Add to cart</Button>
+              <Remove onClick={()=>handleQuantity("dec")} />
+              <Amount>{quantity}</Amount>
+              <Add onClick={()=>handleQuantity("inc")} />
+              <Button onClick={handleClick}>Add to cart</Button>
             </AmountContainer>
           </AddContainer>
         </InfoContainer>
