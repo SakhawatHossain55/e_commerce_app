@@ -165,18 +165,16 @@ console.log(product);
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              {/* {product.color.map((c) => (
+              {product?.color?.map((c) => (
                 <FilterColor color={c} key={c} onClick={() => setColor(c)} />
-              ))} */}
-              {color}
+              ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize>
-                {/* {product.size?.map((s) => (
+                {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>
-                ))} */}
-                {size}
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
