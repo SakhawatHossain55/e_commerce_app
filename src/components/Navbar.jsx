@@ -8,7 +8,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   height: 60px;
-  ${mobile({ height: "50px" })}
+  ${mobile({ height: "500px" })}
 `;
 
 const Wrapper = styled.div`
