@@ -19,8 +19,8 @@ const Products = ({ cat, filters, sort }) => {
       try {
         const res = await axios.get(
           cat
-            ? `https://mysterious-ridge-12895.herokuapp.com/api/products?category=${cat}`
-            : "https://mysterious-ridge-12895.herokuapp.com/api/products"
+            ? `https://stark-lowlands-59601.herokuapp.com/api/products?category=${cat}`
+            : "https://stark-lowlands-59601.herokuapp.com/api/products"
         );
         setProducts(res.data);
       } catch (err) {}
