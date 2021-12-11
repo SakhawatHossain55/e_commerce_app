@@ -127,7 +127,7 @@ const Product = () => {
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
   const dispatch = useDispatch();
-console.log(product);
+  console.log(product);
   useEffect(() => {
     const getProduct = async () => {
       try {
@@ -171,7 +171,7 @@ console.log(product);
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
+              <FilterSize onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>
                 ))}
@@ -180,9 +180,9 @@ console.log(product);
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove onClick={()=>handleQuantity("dec")} />
+              <Remove onClick={() => handleQuantity("dec")} />
               <Amount>{quantity}</Amount>
-              <Add onClick={()=>handleQuantity("inc")} />
+              <Add onClick={() => handleQuantity("inc")} />
               <Button onClick={handleClick}>Add to cart</Button>
             </AmountContainer>
           </AddContainer>
